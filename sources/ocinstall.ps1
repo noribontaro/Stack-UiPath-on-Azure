@@ -5,14 +5,17 @@
 #######################
 
 
-$orchestratorVersion = Get-content C:\temp_param\ocver.ps1 -TotalCount 1
+#$orchestratorVersion = Get-content C:\temp_param\ocver.ps1 -TotalCount 1
+$orchestratorVersion = "18.4.8"
 $orchestratorFolder = "${env:ProgramFiles(x86)}\Uipath\Orchestrator"
 $passphrase = "Passw0rd!"
 $orchestratorHostname
-$databaseServerName = Get-content C:\temp_param\rds.ps1 -TotalCount 1
+#$databaseServerName = Get-content C:\temp_param\rds.ps1 -TotalCount 1
+$databaseServerName = "sUdbserver"
 $databaseName = "UiPath"
 $databaseUserName = "uipathdbuser"
-$databaseUserPassword = Get-content C:\temp_param\rdspass.ps1 -TotalCount 1
+#$databaseUserPassword = Get-content C:\temp_param\rdspass.ps1 -TotalCount 1
+$databaseUserPassword = "Ui6Path#db%as3"
 $databaseAuthenticationMode = "SQL"
 $appPoolIdentityType = "APPPOOLIDENTITY"
 $appPoolIdentityUser
@@ -20,11 +23,13 @@ $appPoolIdentityUserPassword
 $redisServerHost
 $nuGetStoragePath
 $orchestratorAdminUsername = "admin"
-$orchestratorAdminPassword = Get-content C:\temp_param\oc.ps1 -TotalCount 1
+#$orchestratorAdminPassword = Get-content C:\temp_param\oc.ps1 -TotalCount 1
+$orchestratorAdminPassword = "uipath123$"
 $orchestratorTennant = "Default"
 $orchestratorLicenseCode
-$useElasticsearch = Get-content C:\temp_param\usees.ps1 -TotalCount 1
-$esDomainName = Get-content C:\temp_param\es.ps1 -TotalCount 1
+#$useElasticsearch = Get-content C:\temp_param\usees.ps1 -TotalCount 1
+$useElasticsearch = "False"
+#$esDomainName = Get-content C:\temp_param\es.ps1 -TotalCount 1
 $esReqAuth = ""
 
 
