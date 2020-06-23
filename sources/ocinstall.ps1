@@ -11,7 +11,7 @@ $orchestratorFolder = "${env:ProgramFiles(x86)}\Uipath\Orchestrator"
 $passphrase = "Passw0rd!"
 $orchestratorHostname
 #$databaseServerName = Get-content C:\temp_param\rds.ps1 -TotalCount 1
-$databaseServerName = "sUdbserver"
+$databaseServerName = "sudbserver.database.windows.net"
 $databaseName = "UiPath"
 $databaseUserName = "uipathdbuser"
 #$databaseUserPassword = Get-content C:\temp_param\rdspass.ps1 -TotalCount 1
