@@ -4,33 +4,97 @@
 #
 #######################
 
+[CmdletBinding()]
+
+param(
+
+    [Parameter()]
+    [ValidateSet('20.4.1', '19.10.19', '18.4.8')]
+    [string] $orchestratorVersion = "19.10.19",
+
+    [Parameter()]
+    [string] $orchestratorFolder = "${env:ProgramFiles(x86)}\Uipath\Orchestrator",
+
+    #[Parameter(Mandatory = $true)]
+    #[string]  $passphrase,
+
+    [Parameter()]
+    [AllowEmptyString()]
+    [string]  $orchestratorHostname,
+
+    [Parameter(Mandatory = $true)]
+    [string]  $databaseServerName,
+
+    #[Parameter(Mandatory = $true)]
+    #[string]  $databaseName,
+
+    [Parameter()]
+    [string]  $databaseUserName,
+
+    [Parameter(Mandatory = $true)]
+    [string]  $databaseUserPassword,
+
+    [Parameter()]
+    [ValidateSet('SQL', 'WINDOWS')]
+    [string]  $databaseAuthenticationMode = "SQL",
+
+    [Parameter()]
+    [ValidateSet('USER', 'APPPOOLIDENTITY')]
+    [string]  $appPoolIdentityType = "APPPOOLIDENTITY",
+
+    [Parameter()]
+    [string]  $appPoolIdentityUser,
+
+    [Parameter()]
+    [string]  $appPoolIdentityUserPassword,
+
+    [Parameter()]
+    [string[]] $redisServerHost,
+
+    [Parameter()]
+    [string] $nuGetStoragePath,
+
+    [Parameter()]
+    [string] $orchestratorAdminUsername = "admin",
+
+    [Parameter(Mandatory = $true)]
+    [string] $orchestratorAdminPassword,
+
+    [Parameter()]
+    [string] $orchestratorTennant = "Default",
+
+    [Parameter()]
+    [string] $orchestratorLicenseCode
+
+)
+
 
 #$orchestratorVersion = Get-content C:\temp_param\ocver.ps1 -TotalCount 1
-$orchestratorVersion = "18.4.8"
-$orchestratorFolder = "${env:ProgramFiles(x86)}\Uipath\Orchestrator"
-$passphrase = "Passw0rd!"
-$orchestratorHostname
+#$orchestratorVersion = "18.4.8"
+#$orchestratorFolder = "${env:ProgramFiles(x86)}\Uipath\Orchestrator"
+#$passphrase = "Passw0rd!"
+#$orchestratorHostname
 #$databaseServerName = Get-content C:\temp_param\rds.ps1 -TotalCount 1
-$databaseServerName = "sudbserver.database.windows.net"
-$databaseName = "UiPath"
-$databaseUserName = "uipathdbuser"
+#$databaseServerName = "sudbserver.database.windows.net"
+#$databaseName = "UiPath"
+#$databaseUserName = "uipathdbuser"
 #$databaseUserPassword = Get-content C:\temp_param\rdspass.ps1 -TotalCount 1
-$databaseUserPassword = "Ui6Path#db%as3"
-$databaseAuthenticationMode = "SQL"
-$appPoolIdentityType = "APPPOOLIDENTITY"
-$appPoolIdentityUser
-$appPoolIdentityUserPassword
-$redisServerHost
-$nuGetStoragePath
-$orchestratorAdminUsername = "admin"
+#$databaseUserPassword = "Ui6Path#db%as3"
+#$databaseAuthenticationMode = "SQL"
+#$appPoolIdentityType = "APPPOOLIDENTITY"
+#$appPoolIdentityUser
+#$appPoolIdentityUserPassword
+#$redisServerHost
+#$nuGetStoragePath
+#$orchestratorAdminUsername = "admin"
 #$orchestratorAdminPassword = Get-content C:\temp_param\oc.ps1 -TotalCount 1
-$orchestratorAdminPassword = "uipath123$"
-$orchestratorTennant = "Default"
-$orchestratorLicenseCode
+#$orchestratorAdminPassword = "uipath123$"
+#$orchestratorTennant = "Default"
+#$orchestratorLicenseCode
 #$useElasticsearch = Get-content C:\temp_param\usees.ps1 -TotalCount 1
 $useElasticsearch = "False"
 #$esDomainName = Get-content C:\temp_param\es.ps1 -TotalCount 1
-$esReqAuth = ""
+#$esReqAuth = ""
 
 
 ###Create Database
@@ -47,7 +111,7 @@ $sScriptVersion = "1.0"
 # Debug mode; $true - enabled ; $false - disabled
 $sDebug = $true
 # Log File Info
-$sLogPath = "C:\temp\log"
+$sLogPath = "C:\temp\logs"
 $sLogName = "Install-Orchestrator.ps1.log"
 $sLogFile = Join-Path -Path $sLogPath -ChildPath $sLogName
 
