@@ -15,8 +15,8 @@ param(
     [Parameter()]
     [string] $orchestratorFolder = "${env:ProgramFiles(x86)}\Uipath\Orchestrator",
 
-    #[Parameter(Mandatory = $true)]
-    #[string]  $passphrase,
+    [Parameter(Mandatory = $true)]
+    [string]  $passphrase,
 
     [Parameter()]
     [AllowEmptyString()]
@@ -25,8 +25,8 @@ param(
     [Parameter(Mandatory = $true)]
     [string]  $databaseServerName,
 
-    [Parameter(Mandatory = $true)]
-    [string]  $databaseName,
+    #[Parameter(Mandatory = $true)]
+    #[string]  $databaseName,
 
     [Parameter()]
     [string]  $databaseUserName,
@@ -98,7 +98,7 @@ $useElasticsearch = "False"
 
 
 ###Create Database
-Invoke-Sqlcmd -ServerInstance "$databaseServerName" -Username "$databaseUserName" -Password "$databaseUserPassword" "CREATE DATABASE $databaseName COLLATE Latin1_General_CI_AS"
+###Invoke-Sqlcmd -ServerInstance "$databaseServerName" -Username "$databaseUserName" -Password "$databaseUserPassword" "CREATE DATABASE $databaseName COLLATE Latin1_General_CI_AS"
 
 
 #Enable TLS12
