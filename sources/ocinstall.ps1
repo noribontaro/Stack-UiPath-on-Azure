@@ -25,8 +25,8 @@ param(
     [Parameter(Mandatory = $true)]
     [string]  $databaseServerName,
 
-    #[Parameter(Mandatory = $true)]
-    #[string]  $databaseName,
+    [Parameter(Mandatory = $true)]
+    [string]  $databaseName,
 
     [Parameter()]
     [string]  $databaseUserName,
